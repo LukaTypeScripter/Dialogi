@@ -11,7 +11,7 @@ export const RootColors = {
   bgLavenderBlue: "#E0ECFF",
   dimPurple: "#D3A5E7",
   bgDarkPurple: "#330A45",
-  DarkOrchidPurple:"#911DC4"
+  DarkOrchidPurple:"#911DC4",
 };
 export const {
   headerCoolBlack,

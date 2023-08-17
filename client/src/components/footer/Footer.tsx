@@ -9,8 +9,8 @@ const Footer = () => {
       <div className="header__top">
         <img src={headerLogo} alt="" />
         <div className="link__wrapper">
-          <Link to={""}>მთავარი</Link>
-          <Link to={""}>ჩვენ შესახებ</Link>
+          <Link to={"/"}>მთავარი</Link>
+          <Link to={"/about"}>ჩვენ შესახებ</Link>
           <Link to={""}>ჩვენი გუნდი</Link>
           <Link to={""}>სერვისები</Link>
           <Link to={""}>კონტაქტი</Link>

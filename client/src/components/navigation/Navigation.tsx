@@ -11,8 +11,8 @@ const Navigation = () => {
     <NavCont>
       <div className="links__cont">
         <img src={headerLogo} alt="" />
-        <Link to={""}>მთავარი</Link>
-        <Link to={""}>ჩვენ შესახებ</Link>
+        <Link to={"/"}>მთავარი</Link>
+        <Link to={"/about"}>ჩვენ შესახებ</Link>
         <Link to={""}>ჩვენი გუნდი</Link>
         <Link to={""}>სერვისები</Link>
         <Link to={""}>კონტაქტი</Link>
