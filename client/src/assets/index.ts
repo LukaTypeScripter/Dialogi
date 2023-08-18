@@ -27,6 +27,9 @@ import star from './star.png'
 import users from './users.png'
 import check from './check.png'
 import teamPhoto from './teamPhoto.png'
+import aboutUsRectangle from './aboutus-rectangle.jpg'
+import TestVIdeo from './test-video.png'
+import Play from './play-circle.png'
 export {
     headerLogo,
     bgMoonImage,
@@ -56,5 +59,8 @@ export {
     star,
     users,
     check,
-    teamPhoto
+    teamPhoto,
+    aboutUsRectangle,
+    TestVIdeo,
+    Play
 }

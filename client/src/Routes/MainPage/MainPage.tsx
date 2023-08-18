@@ -23,15 +23,7 @@ import {
 } from "../../assets";
 import Card from "../../components/card/Card";
 import { Helmet } from "react-helmet-async";
-import "@fontsource/firago";
-import "@fontsource/firago/500.css";
-import "@fontsource/firago/500-italic.css";
-import "@fontsource/firago/400.css";
-import "@fontsource/firago/400-italic.css";
-import "@fontsource/firago/600.css";
-import "@fontsource/firago/600-italic.css";
-import "@fontsource/firago/700.css";
-import "@fontsource/firago/700-italic.css";
+
 import { MainContainer, ContactBtn, ServicesBtn } from "./styles";
 import styled from "styled-components";
 import { headerCoolBlack } from "../../styled";
