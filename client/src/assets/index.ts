@@ -30,8 +30,16 @@ import teamPhoto from './teamPhoto.png'
 import aboutUsRectangle from './aboutus-rectangle.jpg'
 import TestVIdeo from './test-video.png'
 import Play from './play-circle.png'
+import arrowRigthPurple from './arrow-rightPurple.png'
+import TeamMember1 from './team--member1.png'
+import TeamMember2 from './team-member2.png'
+import TeamMember3 from './team-member3.png'
+import TeamMember4 from './team-member4.png'
+import TeamMember5 from './team-member5.png'
+import TeamMember6 from './team-member6.png'
 export {
     headerLogo,
+    arrowRigthPurple,
     bgMoonImage,
     ilustrationPsycology,
     cheveronLeft,
@@ -62,5 +70,11 @@ export {
     teamPhoto,
     aboutUsRectangle,
     TestVIdeo,
-    Play
+    Play,
+    TeamMember1,
+    TeamMember2,
+    TeamMember3,
+    TeamMember4,
+    TeamMember5,
+    TeamMember6
 }

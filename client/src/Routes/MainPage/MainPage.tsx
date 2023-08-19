@@ -4,10 +4,8 @@ import {
   bgMemberThree,
   bgMemberTwo,
   cheveronLeft,
-  cheveronLeftBlue,
   cheveronLeftPurple,
   cheveronRigth,
-  cheveronRigthBlue,
   cheveronRigthPurple,
   firstMember,
   fourthMember,
@@ -21,13 +19,13 @@ import {
   thirdMember,
   videoPlay,
 } from "../../assets";
-import Card from "../../components/card/Card";
 import { Helmet } from "react-helmet-async";
 
 import { MainContainer, ContactBtn, ServicesBtn } from "./styles";
 import styled from "styled-components";
 import { headerCoolBlack } from "../../styled";
 import ServicesCard from "../../components/servicesCard/servicesCard";
+import DialogServices from "../../components/dialogServices/DialogServices";
 const MainPage = () => {
   return (
     <MainContainer>
@@ -35,7 +33,11 @@ const MainPage = () => {
         <title>მთავარი გვერდი</title>
         <meta
           name="description"
-          content="ეს არის ჩვენი თავარი გვედი,სადაც შეგიძლიათ ნახოთ ინფორმაცია გუნდზე."
+          content="   ჩვენი სახლის კარი ყოველთვის ღიაა ადამიანებისთვის, რომლებსაც
+          სურთ, რომ ცხოვრება უკეთესობისკენ შეცვალონ, მიიღონ პოზიტივი თავიანთ
+          ცხოვრებაში და მზად არიან, რომ არსებული სირთულეები, გამოწვევებად
+          აღიქვან, ფსიქოლოგის დახმარებით დაინახონ მათი მოგვარების გზა, და
+          ცხოვრება, ბევრად უფრო საინტერესო, მშვიდი და ბედნიერი გახადონ."
         />
         <link rel="canonical" href="/" />
       </Helmet>
@@ -95,36 +97,9 @@ const MainPage = () => {
 
       <div className="services">
         <h1 className="services__header">დიალოგის სერვისები</h1>
-        <div className="services__wrapper">
-          <div className="left__cheveron__services">
-            <img src={cheveronLeftBlue} alt="" />
-          </div>
-
-          {/**cards */}
-          <div className="card__wrapper">
-            <Card
-              header="თეატრ თერაპია"
-              color="#EFECFF"
-              subtitle="მოირგე როლი, რომელიც შენთვის საინტერესოა, გაცვალე ემოციები ჯგუფის წევრებთან და გათავისუფლდი დაგროვილი, შეკავებული ენერგიისგან."
-            />
-            <Card
-              header="სისტემური განლაგება "
-              subtitle="ერთ-ერთი ყველაზე მოთხოვნადი და საინტერეო ჯგუფური ტრენინგი, რომელიც საშუალებას გაძლევთ შორიდან დააკვირდეთ საკუთარ თავს,  როლს სხვა ადამიანი იკავებს."
-              color="#FFE6D4"
-            />
-            <Card
-              header="ქოუჩინგი"
-              subtitle="ქოუჩინგი დღევანდელ დღეს საკმაოდ პოპულარული და მოთხოვნადი პროდუქტია. თუმცა, ცოტამ თუ იცის სინამდვილეში მისი შინაარსის და დანიშნულების შესახებ. "
-              color="#E0ECFF"
-            />
-          </div>
-
-          <div className="rigth__cheveron__services">
-            <img src={cheveronRigthBlue} alt="" />
-          </div>
-        </div>
+        <DialogServices />
       </div>
-
+    
       {/**our team */}
       <div className="team">
         <h1 className="team__title">ჩვენი გუნდი</h1>

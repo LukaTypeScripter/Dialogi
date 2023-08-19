@@ -11,8 +11,8 @@ const Footer = () => {
         <div className="link__wrapper">
           <Link to={"/"}>მთავარი</Link>
           <Link to={"/about"}>ჩვენ შესახებ</Link>
-          <Link to={""}>ჩვენი გუნდი</Link>
-          <Link to={""}>სერვისები</Link>
+          <Link to={"/team"}>ჩვენი გუნდი</Link>
+          <Link to={"/services"}>სერვისები</Link>
           <Link to={""}>კონტაქტი</Link>
         </div>
       </div>
