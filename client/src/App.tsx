@@ -6,6 +6,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { AboutUs } from "./Routes/AboutUs/AboutUs";
 import MyTeam from "./Routes/Team/MyTeam";
 import Services from "./Routes/services/Services";
+import SpecificMember from "./Routes/specificMember/SpecificMember";
 const App = () => {
   return (
     <HelmetProvider>
@@ -16,6 +17,7 @@ const App = () => {
       <Route  path="/about" element={<AboutUs/>} />
       <Route  path="/team" element={<MyTeam/>} />
       <Route  path="/services" element={<Services/>} />
+      <Route  path="/team:id" element={<SpecificMember/>} />
     </Routes>
     <Footer/>
   </Router>
