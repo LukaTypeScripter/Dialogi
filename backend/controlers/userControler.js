@@ -51,20 +51,9 @@ if(user) {
 }
 res.status(200).json({message:"register User"})
 })
-//@desc    admin Route
-//route GET /api/admin/
-//@access PRIVATE
-const adminRoute = asyncHandler(async (req, res) => {
-    try {
-      // Fetch data for admin dashboard
-      // Example: const users = await User.find();
-      // Return data to the client
-      res.json({ message: 'Welcome to the admin dashboard' });
-    } catch (error) {
-      res.status(500).json({ message: 'Server error' });
-    }})
+
 export {
     authUser,
     registerUser,
-    adminRoute
+
 }
