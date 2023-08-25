@@ -3,10 +3,9 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv'
 import connectDb from "./config/db.js";
 import userRoutes from './routes/userRoutes.js'
+import admin from './routes/adminRoutes.js'
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
-import MainModel from "./model/mainModels.js";
-import {pagesData} from './data/data.js'
-import mongoose from "mongoose";
+import multer from "multer";
 //setup
 const app = express();
 dotenv.config()
@@ -20,6 +19,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 app.use("/api/users",userRoutes)
+app.use("/api/admin",admin)
 app.use(notFound)
 app.use(errorHandler)
 // Establish a separate connection for data insertion
@@ -51,6 +51,7 @@ app.use(errorHandler)
 //   }
 // });
 
+
 app.listen(port, () => {
-         console.log(`Server is listening on port: ${port}`);
-       });
+       console.log(`Server is listening on port: ${port}`);
+      });
