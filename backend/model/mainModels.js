@@ -76,9 +76,6 @@ const AboutUsImageSchema = new mongoose.Schema({
     
   });
   const MainModelSchema = new mongoose.Schema({
-    name: String,
-    title: String,
-    subtitle: String,
     sections: [
       {
         title: String,
