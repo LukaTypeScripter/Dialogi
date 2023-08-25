@@ -64,7 +64,7 @@ const MainPage = () => {
             <img src={cheveronLeft} alt="" />
           </div>
 
-          <img src={teamMember} alt="" />
+          <img src={teamMember} alt="" className="team__member" />
 
           <div className="rigth__cheveron__cont">
             <img src={cheveronRigth} alt="" />
@@ -211,6 +211,10 @@ const RecentPosted = styled.div`
   }
   .left__cheveron__posts {
     margin-right: 46px;
+  }
+
+  @media only screen and (max-width: 90rem) {
+    padding:80px 40px 458px 40px;
   }
 `;
 export default MainPage;

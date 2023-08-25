@@ -91,4 +91,10 @@ export const NavCont = styled.nav`
     }
 
   }
+
+    @media only screen and (max-width: 90rem) {
+      .links__cont {
+        gap: 19.8px;
+      }
+  }
 `;

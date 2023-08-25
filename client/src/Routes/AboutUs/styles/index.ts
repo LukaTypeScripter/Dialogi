@@ -6,7 +6,8 @@ import { subTextGray, headerCoolBlack } from "../../../styled";
 
 
 export const Btn = styled(Button)`
-  padding: 17px 37px 18px 35.84px;
+width: 217px;
+height: 56px;
   color: white;
   background-color: #911dc4;
   font-size: 16px;
@@ -16,9 +17,18 @@ export const Btn = styled(Button)`
   word-wrap: break-word;
   border: none;
   outline: none;
-  margin-left: 247px;
-  margin-bottom: 100px;
   border-radius: 7px;
+  position: absolute;
+  top: 93%;
+  bottom: 0;
+  right: 0;
+  left: 12.5%;
+  @media only screen and (max-width: 90rem) {
+    top: 93%;
+  bottom: 0;
+  right: 0;
+  left: 3%;
+  }
 `;
 export const AboutContainer = styled.div`
 .btn__wrapper {
@@ -56,10 +66,12 @@ margin-top: 30px;
     margin-bottom: 5rem;
     height: 1450px;
     background-size: cover;
+    position: relative;
   }
   .book__wrapper {
     display: flex;
     padding: 300px 247px 100px;
+   
   }
   .icon__wrapper {
     background-color: #522367;
@@ -267,5 +279,44 @@ margin-top: 20px;
    left: -35%;
    top: 65%;
    bottom: 0;
+  }
+
+  @media only screen and (max-width: 90rem) {
+    .book__wrapper {
+      padding: 380px 40px !important;
+    }
+   
+    .about__us__subtext {
+      width: 1360px;
+      margin-left: 40px !important;
+    }
+      .team__photo {
+      max-width: 524px;
+      max-height: 887px;
+  }
+  .clients__rate__container {
+    padding: 80px 0 ;
+  }
+  .wrapper {
+    gap: 25px;
+  }
+  .cards__wrapper {
+    gap:30px;
+  }
+  .card,    .blur__play {
+    width: 378px !important;
+  }
+  .blur__img {
+      width: 378px !important;
+    }
+    .arrow__rigth {
+      margin-top: 70px !important;
+      margin-left: 30px !important;
+    }
+    .arrow__left {
+      margin-top: 70px !important;
+      margin-right: 30px !important;
+      margin-left: 10px;
+    }
   }
 `;

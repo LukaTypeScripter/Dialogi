@@ -25,7 +25,7 @@ export const Rates = () => {
 
           <div className="cards__wrapper">
             <div className="card">
-              <img src={TestVIdeo} alt="" />
+              <img src={TestVIdeo} alt="" className='blur__img'/>
               <div className="blur__play">
                 <img src={Play} alt="" />
                 <div className="minutes">01:54</div>
@@ -34,7 +34,7 @@ export const Rates = () => {
             </div>
 
             <div className="card">
-              <img src={TestVIdeo} alt="" />
+              <img src={TestVIdeo} alt="" className='blur__img'/>
               <div className="blur__play">
                 <img src={Play} alt="" />
                 <div className="minutes">01:54</div>
@@ -43,7 +43,7 @@ export const Rates = () => {
             </div>
 
             <div className="card">
-              <img src={TestVIdeo} alt="" />
+              <img src={TestVIdeo} alt="" className='blur__img'/>
               <div className="blur__play">
                 <img src={Play} alt="" />
                 <div className="minutes">01:54</div>
@@ -99,7 +99,7 @@ export const Rates = () => {
           
           </div>
           <div className="team__wrapper">
-          <img src={TeamMember3} alt="" />
+          <img src={TeamMember3} alt=""  />
           <div className="blur__bg">
           <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
           <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>

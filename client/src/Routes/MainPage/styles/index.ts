@@ -85,6 +85,8 @@ export const MainContainer = styled.main`
       background-color: ${bgLavender};
       border-bottom-right-radius: 40px;
       border-top-right-radius: 40px;
+      width: 912px;
+      height: 707px;
       .instagram__cont {
         position: absolute;
         left: 21%;
@@ -273,5 +275,53 @@ color: #BAB8C8;
       }
     }
   }
+  @media only screen and (max-width: 90rem) {
+  .slogan {
+    padding: 129px 40px 80px 40px;
+  }
+  .photo__slider {
+    height: 490px !important;
+  }
+  .team__member {
+    width: 418px !important;
+    height: 338px !important;
+  }
+ .about__us__texts {
+  padding: 0;
+  margin-left: 39px;
+ }
+ .about__us {
+  padding-right:40px;
+ }
+ .instagram__cont {
+  left: 25% !important;
+  top: 9% !important;
+ }
+
+ .gallery  {
+  left: 63% !important;
+  
+}
+ .services {
+padding: 90px 40px 80px 40px !important;
+
+}
+.card__wrapper {
+  gap: 29px !important;
+}
+.left__cheveron__services {
+  margin-right:29px !important;
+}
+.rigth__cheveron__services {
+  margin-left:20px !important;
+}
+.team {
+padding: 0;
+.team__members {
+  gap: 80px;
+}
+}
+
+}
 
   `;

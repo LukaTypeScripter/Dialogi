@@ -66,4 +66,15 @@ word-wrap: break-word
     margin-top: 12px;
     opacity: 0.80
   }
+  .contact__us__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .new__routes__wrapper{
+    display: flex;
+    gap: 43px;
+    a {
+      color: white;
+    }
+  }
 `;

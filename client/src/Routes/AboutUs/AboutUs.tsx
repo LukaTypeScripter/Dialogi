@@ -63,7 +63,7 @@ export const AboutUs = () => {
             />
           </div>
           <div>
-            <img src={teamPhoto} alt="" />
+            <img src={teamPhoto} alt="" className="team__photo" />
           </div>
         </div>
         <Btn>დაჯავშნე დღესვე</Btn>

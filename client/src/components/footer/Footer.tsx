@@ -13,12 +13,21 @@ const Footer = () => {
           <Link to={"/about"}>ჩვენ შესახებ</Link>
           <Link to={"/team"}>ჩვენი გუნდი</Link>
           <Link to={"/services"}>სერვისები</Link>
-          <Link to={""}>კონტაქტი</Link>
+          <Link to={"/contact"}>კონტაქტი</Link>
         </div>
       </div>
       <hr />
       <div className="bottom__wrapper">
+        <div className="contact__us__wrapper">
         <h1>დაგვიკავშირდით</h1>
+        <div className="new__routes__wrapper">
+          <Link to={"/about"}> ბავშვთა ფსიქოლოგია</Link>
+          <Link to={"/team"}>ზრდასრულთა ფსიქოლოგია</Link>
+          <Link to={"/services"}>წყვილების ფსიქოლოგია</Link>
+          <Link to={"/contact"}>ჯგუფური თერაპია</Link>
+        </div>
+        </div>
+        
         <div className="contact__info">
         <p>თბილისი, საქართველო</p>
         <p>Tel: +995 592 00 32 32</p>

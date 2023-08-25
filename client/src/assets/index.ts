@@ -37,8 +37,10 @@ import TeamMember3 from './team-member3.png'
 import TeamMember4 from './team-member4.png'
 import TeamMember5 from './team-member5.png'
 import TeamMember6 from './team-member6.png'
+import map from './map.png'
 export {
     headerLogo,
+    map,
     arrowRigthPurple,
     bgMoonImage,
     ilustrationPsycology,

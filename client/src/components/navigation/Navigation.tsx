@@ -15,18 +15,13 @@ const Navigation = () => {
         <Link to={"/about"}>ჩვენ შესახებ</Link>
         <Link to={"/team"}>ჩვენი გუნდი</Link>
         <Link to={"/services"}>სერვისები</Link>
-        <Link to={""}>კონტაქტი</Link>
+        <Link to={"/contact"}>კონტაქტი</Link>
         <Link to={""}><PsycologyBtn>Psychologi.ge</PsycologyBtn></Link>
       </div>
       <div className="left__side">
         <div className="left__side__contact">
           <div className="contact">
-          <Link to={""} className="contact__us">Contact Us</Link>
-          <p>1-800-664-9073</p>
           </div>
-          <Link to={""} className="login">
-          Login
-        </Link>
         </div>
         <Link to={""}>
           <ContactBtn>დაგვიკავშირდით</ContactBtn>
