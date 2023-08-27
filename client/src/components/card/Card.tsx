@@ -40,7 +40,9 @@ word-wrap: break-word
     img {
         margin-left: 10px;
     }
-    
+    @media only screen and (max-width: 43.3rem) {
+        margin-top: 60px;
+    }
 `
 const CardContainer = styled.div<{color:string}>`
     background-color: ${props => props.color};
@@ -48,14 +50,14 @@ const CardContainer = styled.div<{color:string}>`
     border-radius: 27px;
     width: 378px;
     height: 350px;
-
+   
     h1 {
         color: #032D60;
 font-size: 24px;
 font-weight: 700;
 line-height: 21px;
 word-wrap: break-word;
-width: 100%;
+
     }
     p {
         color: #032D60;
@@ -65,6 +67,23 @@ line-height: 25.50px;
 word-wrap: break-word;
 margin-top: 30px;
 height: 130px;
+    }
+    @media only screen and (max-width: 90rem) {
+        h1 {
+            width: 282px;
+        }
+        p {
+            width: 299px;
+            height: 130px;
+        }
+    }
+    @media only screen and (max-width: 43.3rem) {
+        width: 264px;
+        height: 339px;
+        padding: 20px;
+        p {
+            width: 224px;
+        }
     }
 `
 export default Card

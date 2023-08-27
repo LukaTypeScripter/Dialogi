@@ -206,7 +206,7 @@ const Contact = () => {
         <div className="contact__inputs">
           <div className="name__surname__Wrapper">
             <input type="text" className="name" placeholder="სახელი, გარი" />
-            <input type="text" placeholder="სახელი, გარი" />
+            <input type="text" placeholder="სახელი, გარი" className="name" />
           </div>
           <input type="text" className="title" placeholder="სათაური" />
           <textarea
@@ -216,7 +216,7 @@ const Contact = () => {
           <SubmitContactBtn>გაგზავნა</SubmitContactBtn>
         </div>
       </div>
-      <iframe
+      {/* <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d743.8141768495844!2d44.780543078058535!3d41.77968097001369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40446d63e8ee6db7%3A0x64220acb806119c5!2sWEBAPP!5e0!3m2!1ska!2sge!4v1692883029136!5m2!1ska!2sge"
         width="600"
         height="450"
@@ -224,7 +224,7 @@ const Contact = () => {
     
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
+      ></iframe> */}
     </ContactContainer>
   );
 };
@@ -244,6 +244,7 @@ const SubmitContactBtn = styled(Button)`
   margin-top: 30px;
 `;
 const ContactContainer = styled.div`
+  
   .contact__title {
     padding: 10.125rem 0 5rem 0;
     text-align: center;
@@ -349,6 +350,22 @@ const ContactContainer = styled.div`
     margin: 80px 246px 100px;
     width: 1428px;
     height:652px;
+  }
+  @media only screen and (max-width: 90rem) {
+    .contact__main {
+      padding: 50px 40px;
+    }
+    .contact__inputs {
+    position: relative;
+    left: -700px;
+    width: 864px;
+    .name {
+      width: 417px;
+    }
+    }
+   .title {
+    width: 864px !important;
+   }
   }
 `;
 export default Contact;

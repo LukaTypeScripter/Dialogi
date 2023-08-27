@@ -46,5 +46,8 @@ margin-bottom: 33px;
     .wrapper__texts {
         margin: 30px 20px 0 20px;
     }
+    @media only screen and (max-width: 43.312rem) {
+        max-width: 264px;
+    }
 `
 export default ServicesCard

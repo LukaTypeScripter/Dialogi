@@ -9,9 +9,13 @@ body {
   font-feature-settings: "case" on;
   font-family: "FiraGO";
     font-weight: 400;
-    height: 100%;
+
+ height: 100vh;
+    overflow-x: hidden;
    scroll-behavior: smooth;
-   overflow-x: hidden;
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
   a {
     list-style: none;

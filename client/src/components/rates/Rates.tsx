@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 import { cheveronLeftPurple, TestVIdeo, Play, cheveronRigthPurple, arrowRigthPurple, TeamMember1, TeamMember2, TeamMember3 } from '../../assets'
 import Button from '../Button/Button'
-import { Btn } from '../../Routes/AboutUs/styles/index'
+
 
 export const Rates = () => {
   return (
@@ -77,34 +77,34 @@ export const Rates = () => {
           </div>
 
           <div className="team__wrapper">
-          <img src={TeamMember1} alt="" />
+          <img src={TeamMember1} alt="" className='team__member__img'/>
           <div className="blur__bg">
           <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
           <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
           <div className="blur__btn_wrapper">
-          <Btn>დაჯავშნა</Btn>
+          <BtnBook>დაჯავშნა</BtnBook>
           </div>
           </div>
           
           </div>
           <div className="team__wrapper">
-          <img src={TeamMember2} alt="" />
+          <img src={TeamMember2} alt="" className='team__member__img'/>
           <div className="blur__bg">
           <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
           <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
           <div className="blur__btn_wrapper">
-          <Btn>დაჯავშნა</Btn>
+          <BtnBook>დაჯავშნა</BtnBook>
           </div>
           </div>
           
           </div>
           <div className="team__wrapper">
-          <img src={TeamMember3} alt=""  />
+          <img src={TeamMember3} alt=""  className='team__member__img'/>
           <div className="blur__bg">
           <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
           <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
           <div className="blur__btn_wrapper">
-          <Btn>დაჯავშნა</Btn>
+          <BtnBook>დაჯავშნა</BtnBook>
           </div>
           </div>
           
@@ -136,3 +136,21 @@ word-wrap: break-word
   }
 
 `
+export const BtnBook = styled(Button)`
+width: 217px;
+height: 56px;
+  color: white;
+  background-color: #911dc4;
+  font-size: 16px;
+  font-family: FiraGO;
+  font-weight: 500;
+  line-height: 21px;
+  word-wrap: break-word;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  margin-left: 210px;
+  @media only screen and (max-width: 90rem) {
+    margin-left: 170px;
+  }
+`;

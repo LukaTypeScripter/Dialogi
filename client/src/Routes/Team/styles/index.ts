@@ -3,8 +3,9 @@ import { headerCoolBlack } from "../../../styled";
 
 
 export const TeamContainer = styled.div`
+   width: 100%;
   .my__team {
-    padding: 165px 247px 80px 247px;
+    padding: 165px 247px 80px;
     .my__team__title,
     .my__Team__subtitle {
       text-align: center;
@@ -125,4 +126,29 @@ margin-top: 30px;
         padding: 15px 14px 15px 16px;
     }
   }
+  @media only screen and (max-width: 90rem) {
+
+    .team__img {
+      width: 378px !important;
+    }
+    .my__team {
+      padding:100px 80px;
+    }
+    .blur__bg {
+      width: 338px !important;
+    }
+    .slider__cards__wrapper {
+      padding: 80px 10px 146px 40px !important;
+      margin: 0 !important;
+      gap: 19px;
+    }
+    .services__subtitle {
+      margin-left: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 1360px;
+    }
+
+  }
+
 `;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { bgMoonImage } from "../../../assets";
+import { bgMoonImage, homepagesuccessnow } from "../../../assets";
 import Button from "../../../components/Button/Button";
 import { DarkOrchidPurple, headerCoolBlack, subTextGray, bgLavender, white } from "../../../styled";
 
@@ -29,6 +29,9 @@ export const ContactBtn = styled(Button)`
   font-weight: 500;
   line-height: 21px;
   word-wrap: break-word;
+  @media only screen and (max-width: 43.312rem)  {
+    margin-left: 0;
+  }
 `;
 
 export const MainContainer = styled.main`
@@ -37,6 +40,11 @@ export const MainContainer = styled.main`
   background-position: left -7% right 15%;
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
+  @media only screen and (max-width: 42.813rem) {
+    background-image: url(${homepagesuccessnow});
+    background-position: top  right  !important;
+  }
   .slogan {
     padding: 8.063rem 15.375rem 4.438rem 15.375rem;
     display: flex;
@@ -307,7 +315,7 @@ padding: 90px 40px 80px 40px !important;
 
 }
 .card__wrapper {
-  gap: 29px !important;
+  gap: 19px !important;
 }
 .left__cheveron__services {
   margin-right:29px !important;
@@ -317,11 +325,134 @@ padding: 90px 40px 80px 40px !important;
 }
 .team {
 padding: 0;
+
 .team__members {
-  gap: 80px;
+  gap: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
 }
 }
+.position {
+    text-align: center;
+    width: 275px !important;
+   }
+   .ilustration {
+    margin-left: 0;
+   }
+}
+@media only screen and (max-width: 43.312rem) {
+  .slogan {
+    flex-direction: column;
+    padding:20px 20px 40px;
+  }
+  .slogan__cont {
+    margin-left: 0;
+    h1 {
+font-size: 32px !important;
 
-}
+line-height: 32px !important;
 
+    }
+    p{
+      font-size: 20px !important;
+      text-align: start;
+    }
+  }
+      .btn__wrapper {
+    flex-direction: column;
+    margin-left: 0;
+    width: 100%;
+    gap: 10px;
+  }
+  .slogan__cont {
+    margin-left: 0 !important;
+  }
+  #ilustration{
+    width: 388px;
+    margin: 20px;
+    position: relative;
+  }
+  .team__member {
+    width: 264px !important;
+    height: 164px !important;
+  }
+  .photo__slider {
+    width: 100% !important;
+    height: 468px !important;
+  }
+  .about__us {
+    flex-direction: column;
+    padding-right: 0;
+    padding-top: 40px !important;
+   
+  }
+  .instagram__cont,.gallery {
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    img {
+     width: 18px;
+     height: 18px;
+     margin-top: 12px;
+     margin-left: 12px;
+    }
+  }
+  .gallery {
+    top: 63% !important;
+  }
+  .instagram__cont {
+    top: 28% !important;
+  }
+  .about__us__texts {
+    h1 {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      font-size: 32px;
+      line-height: 64px;
+    }
+  }
+  .about__text {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .expend__text::before {
+    left: -80px !important;
+    height: 269px !important;
+  }
+  .expend__text {
+    margin-left: 40px !important;
+   
+  }
+  .left__cheveron__cont img,.rigth__cheveron__cont img {
+    margin: 0 15px !important;
+    padding: 12px !important;
+  }
+  .left__cheveron__services img,.rigth__cheveron__services img {
+    padding: 0 !important;
+    padding-top: 8px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .left__cheveron__services ,.rigth__cheveron__services {
+    width: 42px !important;
+    height: 42px !important;
+  }
+  .services {
+    padding: 40px 20px 53px !important;
+  }
+  .wrapper__team__members {
+    display: flex;
+    align-items: center;
+  }
+  .team__members {
+    margin-left: 20px !important;
+    margin-top: 20px !important;
+  }
+  .left__cheveron__posts {
+    margin-right: 20px !important;
+  }
+  .rigth__cheveron__posts {
+    margin-left: 20px !important;
+  }
+}
   `;

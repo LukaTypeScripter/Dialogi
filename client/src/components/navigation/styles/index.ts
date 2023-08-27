@@ -97,4 +97,9 @@ export const NavCont = styled.nav`
         gap: 19.8px;
       }
   }
+
+  .mobile__wrapper {
+    display: flex;
+    gap: 85px;
+  }
 `;

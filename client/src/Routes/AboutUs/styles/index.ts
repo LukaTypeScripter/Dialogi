@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { aboutUsRectangle } from "../../../assets";
+import { aboutUsRectangle, rec } from "../../../assets";
 import Button from "../../../components/Button/Button";
 import { subTextGray, headerCoolBlack } from "../../../styled";
 
@@ -311,12 +311,51 @@ margin-top: 20px;
     }
     .arrow__rigth {
       margin-top: 70px !important;
-      margin-left: 30px !important;
+      margin-left: 0;
     }
     .arrow__left {
       margin-top: 70px !important;
-      margin-right: 30px !important;
+
       margin-left: 10px;
     }
+    .team__member__img {
+      width: 378px;
+    }
+    .team__book {
+      gap: 29px;
+      padding-left: 30px !important;
+      padding-right: 30px !important;
+    }
+    .blur__bg {
+      width: 338px;
+    }
+    
   }
+  @media only screen and (max-width: 43.3rem)  {
+    .about__us__text {
+font-size: 32px;
+line-height: 64px;
+    }
+    .about__us__subtext {
+      width: auto;
+font-size: 16px;
+line-height: 30px;
+
+    }
+    .about__us__book {
+      background-image: url(${rec});
+    }
+    .team__photo  {
+    width: 388px;
+    height:284px;
+  }
+  .book__wrapper {
+    flex-direction: column-reverse;
+   padding: 239px 40px 0 !important;
+  }
+  .about__us__book {
+    height: 2450px;
+  }
+  }
+ 
 `;

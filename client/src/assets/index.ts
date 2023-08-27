@@ -37,9 +37,12 @@ import TeamMember3 from './team-member3.png'
 import TeamMember4 from './team-member4.png'
 import TeamMember5 from './team-member5.png'
 import TeamMember6 from './team-member6.png'
+import homepagesuccessnow from './homepage-success-now-lg-bg.png'
 import map from './map.png'
+import rec from './rec.png'
 export {
     headerLogo,
+    rec,
     map,
     arrowRigthPurple,
     bgMoonImage,
@@ -78,5 +81,6 @@ export {
     TeamMember3,
     TeamMember4,
     TeamMember5,
-    TeamMember6
+    TeamMember6,
+    homepagesuccessnow
 }

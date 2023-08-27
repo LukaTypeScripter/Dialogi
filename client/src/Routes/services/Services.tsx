@@ -45,7 +45,10 @@ const Services = () => {
   );
 };
 const ServicesContainer = styled.div`
-  padding: 165px 247px 299px;
+  padding: 165px 200px 299px;
+  @media only screen and (max-width: 90rem) {
+    padding: 165px 30px 341px !important;
+  }
   .services__title,
   .services__subtitle {
     text-align: center;
@@ -74,5 +77,11 @@ const ServicesContainer = styled.div`
     gap: 50px;
     margin-top: 5rem;
   }
+  @media only screen and (max-width: 90rem) {
+    .services__subtitle, .services__title {
+     width: auto;
+    }
+  }
+
 `;
 export default Services;

@@ -77,4 +77,38 @@ word-wrap: break-word
       color: white;
     }
   }
+  @media only screen and (max-width: 42.813rem) {
+    padding: 40px 40px 30px 40px;
+    .header__top {
+      flex-direction: column;
+    }
+    .footer__logo {
+      width: 150px;
+    }
+    .link__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 40px;
+      row-gap: 20px;
+      margin: 0;
+      margin-top: 40px;
+      a {
+        margin-left: 0 !important;
+      }
+    }
+    hr {
+        margin-left: 0;
+        margin-top: 30px !important;
+      }
+    .contact__info {
+      flex-direction: column;
+    
+      p {
+        margin-top: 19px;
+      }
+    }
+    .contact__info p:nth-child(2) {
+      margin-left: 0;
+    }
+  }
 `;

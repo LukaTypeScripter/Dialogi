@@ -4,8 +4,10 @@ import {
   bgMemberThree,
   bgMemberTwo,
   cheveronLeft,
+  cheveronLeftBlue,
   cheveronLeftPurple,
   cheveronRigth,
+  cheveronRigthBlue,
   cheveronRigthPurple,
   firstMember,
   fourthMember,
@@ -26,7 +28,9 @@ import styled from "styled-components";
 import { headerCoolBlack } from "../../styled";
 import ServicesCard from "../../components/servicesCard/servicesCard";
 import DialogServices from "../../components/dialogServices/DialogServices";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 const MainPage = () => {
+  const isAboveTabletScreens = useMediaQuery("(max-width:685px)");
   return (
     <MainContainer>
       <Helmet>
@@ -51,11 +55,17 @@ const MainPage = () => {
           </div>
         </div>
         <div className="ilustration">
-          <img src={ilustrationPsycology} alt="" />
+          <img src={ilustrationPsycology} alt="" id="ilustration" />
         </div>
       </div>
       {/**about us */}
       <div className="about__us">
+      <div className="about__us__texts">
+
+          {isAboveTabletScreens && (
+   <h1>ჩვენ შესახებ</h1>
+          )}
+      </div>
         <div className="photo__slider">
           <div className="instagram__cont">
             <img src={videoPlay} alt="" />
@@ -75,7 +85,10 @@ const MainPage = () => {
         </div>
 
         <div className="about__us__texts">
-          <h1>ჩვენ შესახებ</h1>
+          {!isAboveTabletScreens && (
+   <h1>ჩვენ შესახებ</h1>
+          )}
+       
           <p className="about__text">
             ფსიქოთერაპიისა და კონსულტაციის სახლი "დიალოგი" უკვე 4 წელზე მეტია
             რაც დაარსდა და ამ დროის განმავლობაში არაერთ მომხმარებელს მოემსახურა.
@@ -104,7 +117,29 @@ const MainPage = () => {
       <div className="team">
         <h1 className="team__title">ჩვენი გუნდი</h1>
         <div className="team__members">
+          {isAboveTabletScreens ? (
+            <div className="wrapper__team__members">
+    <div className="left__cheveron__services">
+            <img src={cheveronLeftBlue} alt="" />
+          </div>
+
           <div className="member__first">
+            <img src={bgMemberFirst} alt="" id="member__first" />
+            <img src={firstMember} alt="" id="member" />
+            <div className="info__wrapper">
+              <b className="name">ქეთევან ირემაშვილი</b>
+              <p className="position">ქოუჩი, პერსონალური ტრენერი</p>
+            </div>
+          </div>
+
+         
+          <div className="rigth__cheveron__services">
+            <img src={cheveronRigthBlue} alt="" />
+          </div>
+            </div>
+          ) : (
+            <>
+            <div className="member__first">
             <img src={bgMemberFirst} alt="" id="member__first" />
             <img src={firstMember} alt="" id="member" />
             <div className="info__wrapper">
@@ -138,6 +173,9 @@ const MainPage = () => {
               ჩვევების სპეციალისტი
             </p>
           </div>
+            </>
+          )}
+          
         </div>
       </div>
 
@@ -150,12 +188,20 @@ const MainPage = () => {
             </div>
 
             <div className="service__cards__wrapper">
-              <ServicesCard
-                img={statusFirst}
-                title="გამოიმუშავე სწორი ჩვევები"
-                subtext="ს არის სისტემა, რომელიც ამუშავებს მონაცემებს, ზოგავსს არის სისტემა, რომელიც ამუშავებს მონაცემებს, ზოგავს ..."
-              />
-              <ServicesCard
+              {isAboveTabletScreens ? (
+                 <ServicesCard
+                 img={statusFirst}
+                 title="გამოიმუშავე სწორი ჩვევები"
+                 subtext="ს არის სისტემა, რომელიც ამუშავებს მონაცემებს, ზოგავსს არის სისტემა, რომელიც ამუშავებს მონაცემებს, ზოგავს ..."
+               />
+              ) : (
+                <>
+                 <ServicesCard
+                 img={statusFirst}
+                 title="გამოიმუშავე სწორი ჩვევები"
+                 subtext="ს არის სისტემა, რომელიც ამუშავებს მონაცემებს, ზოგავსს არის სისტემა, რომელიც ამუშავებს მონაცემებს, ზოგავს ..."
+               />
+                <ServicesCard
                 img={statusSecond}
                 title="პოსტრამვული სტრესული აშლილობა"
                 subtext="ს არის სისტემა, რომელიც ამუშავებს მონაცემებს, ზოგავს ..."
@@ -165,6 +211,10 @@ const MainPage = () => {
                 title="ჭარბი წონა და მენტალური ჯანმრთელობა"
                 subtext="ს არის სისტემა, რომელიც ამუშავებს მონაცემებს, ზოგავს ..."
               />
+              </>
+              )}
+             
+             
             </div>
 
             <div className="rigth__cheveron__posts">
@@ -215,6 +265,10 @@ const RecentPosted = styled.div`
 
   @media only screen and (max-width: 90rem) {
     padding:80px 40px 458px 40px;
+   .ilustration {
+    margin-left: 0;
+   }
+   
   }
 `;
 export default MainPage;
