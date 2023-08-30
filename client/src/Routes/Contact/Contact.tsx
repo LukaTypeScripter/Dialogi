@@ -284,6 +284,8 @@ const ContactContainer = styled.div`
     }
     svg {
       margin-top: 30px;
+      width: 28px;
+      height: 28px;
     }
     .subtitle {
       color: #b9b3d9;
@@ -332,9 +334,9 @@ const ContactContainer = styled.div`
 
   .name__surname__Wrapper {
     display: flex;
-    .name {
-      margin-right: 30px;
-    }
+
+      gap: 30px;
+    
   }
 
   .title,
@@ -355,17 +357,19 @@ const ContactContainer = styled.div`
     .contact__main {
       padding: 50px 40px;
     }
-    .contact__inputs {
-    position: relative;
-    left: -700px;
-    width: 864px;
-    .name {
-      width: 417px;
-    }
+    .contact__info {
+      width: 355px;
     }
    .title {
     width: 864px !important;
    }
+  }
+  @media only screen and (max-width: 43.3rem) {
+    .name__surname__Wrapper,.contact__main {
+      flex-direction: column;
+     
+    }
+   
   }
 `;
 export default Contact;

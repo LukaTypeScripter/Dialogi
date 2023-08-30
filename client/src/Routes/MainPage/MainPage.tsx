@@ -22,15 +22,35 @@ import {
   videoPlay,
 } from "../../assets";
 import { Helmet } from "react-helmet-async";
-
+import {  useFetchDataMutation } from "../../slices/usersApiSLice";
 import { MainContainer, ContactBtn, ServicesBtn } from "./styles";
 import styled from "styled-components";
 import { headerCoolBlack } from "../../styled";
 import ServicesCard from "../../components/servicesCard/servicesCard";
 import DialogServices from "../../components/dialogServices/DialogServices";
 import useMediaQuery from "../../Hooks/useMediaQuery";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { AuthState } from "../../slices/authSlice";
 const MainPage = () => {
   const isAboveTabletScreens = useMediaQuery("(max-width:685px)");
+  const [fetchData, { data, isLoading }] = useFetchDataMutation();
+
+const { userInfo } = useSelector((state: { auth: AuthState }) => state.auth);
+useEffect(() => {
+  
+},[userInfo])
+
+
+if (isLoading) {
+  return <div>Loading...</div>;
+}
+
+
+if (data) {
+  console.log('Fetched data:', data);
+}
+
   return (
     <MainContainer>
       <Helmet>

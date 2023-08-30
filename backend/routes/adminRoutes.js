@@ -9,7 +9,7 @@ const storage = multer.memoryStorage(); // Store the image in memory
 const upload = multer({ storage });
 //about-us section
 // router.post("/aboutusimage",newAboutUsImage)
-router.post('/admin',isAdmin, protect,adminRoute)
+router.post('/admin',adminRoute)
 router.get("/aboutusimage",newAboutUsImageALL)
 router.put("/aboutusimage/:mainId/:sectionId/:imageId",upload.single('img'),newAboutUsImageUpdate)
 router.delete('/aboutusimage/:_id',newAboutUsImageDelate)

@@ -150,5 +150,27 @@ margin-top: 30px;
     }
 
   }
+  @media only screen and (max-width: 43.3rem) {
+    .blur__btn_wrapper {
+left: -10% !important;
+top: 65%;
+bottom: 0px;
+}
+.my__team {
+  padding: 40px 25px 0 !important;
+}
+.services__title,.my__team__title {
+font-size: 32px !important;
+line-height: 64px !important;
+}
+.services__subtitle,.my__Team__subtitle  {
+font-size: 16px !important;
+line-height: 30px !important;
+width: auto;
+}
+.btn__wrapper {
+  margin-left: 30%;
+}
+  }
 
 `;

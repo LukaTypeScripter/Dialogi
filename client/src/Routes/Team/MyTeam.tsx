@@ -5,8 +5,10 @@ import { Btns } from "../../components/rates/Rates";
 import Card from "../../components/card/Card";
 import { TeamContainer } from "./styles";
 import { Helmet } from "react-helmet-async";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 
 const MyTeam = () => {
+  const isAboveTabletScreens = useMediaQuery("(max-width:685px)");
   return (
     <TeamContainer>
       <Helmet>
@@ -54,9 +56,16 @@ const MyTeam = () => {
       <div className="left__cheveron__cont">
             <img src={cheveronLeft} alt="" />
           </div>
+          {isAboveTabletScreens ? (
             <Card color="#EFECFF" header="თეატრ თერაპია" subtitle="მოირგე როლი, რომელიც შენთვის საინტერესოა, გაცვალე ემოციები ჯგუფის წევრებთან და გათავისუფლდი დაგროვილი, შეკავებული ენერგიისგან."/>
+          ) : (
+<>
+<Card color="#EFECFF" header="თეატრ თერაპია" subtitle="მოირგე როლი, რომელიც შენთვის საინტერესოა, გაცვალე ემოციები ჯგუფის წევრებთან და გათავისუფლდი დაგროვილი, შეკავებული ენერგიისგან."/>
             <Card color="#FFE6D4" header="სისტემური განლაგება " subtitle="ერთ-ერთი ყველაზე მოთხოვნადი და საინტერეო ჯგუფური ტრენინგი, რომელიც საშუალებას გაძლევთ შორიდან დააკვირდეთ საკუთარ თავს, ხოლო თქვენს როლს სხვა ადამიანი იკავებს."/>
             <Card color="#E0ECFF" header="ქოუჩინგი" subtitle="ქოუჩინგი დღევანდელ დღეს საკმაოდ პოპულარული და მოთხოვნადი პროდუქტია. თუმცა, ცოტამ თუ იცის სინამდვილეში მისი შინაარსის და დანიშნულების შესახებ. "/>
+</>
+          )}
+            
 
             <div className="rigth__cheveron__cont">
             <img src={cheveronRigth} alt="" />

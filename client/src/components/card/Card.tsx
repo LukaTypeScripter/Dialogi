@@ -48,8 +48,8 @@ const CardContainer = styled.div<{color:string}>`
     background-color: ${props => props.color};
     padding: 40px;
     border-radius: 27px;
-    width: 378px;
-    height: 350px;
+    max-width: 378px;
+    max-height: 350px;
    
     h1 {
         color: #032D60;
@@ -78,12 +78,8 @@ height: 130px;
         }
     }
     @media only screen and (max-width: 43.3rem) {
-        width: 264px;
-        height: 339px;
         padding: 20px;
-        p {
-            width: 224px;
-        }
+        max-width: 264px !important;
     }
 `
 export default Card

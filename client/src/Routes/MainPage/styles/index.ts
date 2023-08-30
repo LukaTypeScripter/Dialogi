@@ -256,8 +256,8 @@ word-wrap: break-word
         right: 0;
       }
       #member__first {
-        width: 275px;
-        height: 275px;
+        max-width: 275px;
+        max-height: 275px;
         padding-top: 15px;
       }
       .name {
@@ -368,7 +368,7 @@ line-height: 32px !important;
     margin-left: 0 !important;
   }
   #ilustration{
-    width: 388px;
+    width: 100%;
     margin: 20px;
     position: relative;
   }
@@ -454,5 +454,10 @@ line-height: 32px !important;
   .rigth__cheveron__posts {
     margin-left: 20px !important;
   }
+  .ilustration {
+    width: auto;
+    height: auto;
+  }
+  
 }
   `;

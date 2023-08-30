@@ -18,17 +18,16 @@ height: 56px;
   border: none;
   outline: none;
   border-radius: 7px;
-  position: absolute;
-  top: 93%;
-  bottom: 0;
-  right: 0;
-  left: 12.5%;
-  @media only screen and (max-width: 90rem) {
-    top: 93%;
-  bottom: 0;
-  right: 0;
-  left: 3%;
+  margin-left: 247px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  @media only screen and (max-width: 43.3rem)  {
+    margin-top: 20px;
+  margin-left: 19.5px;
+  padding-bottom: 20px;
   }
+
+
 `;
 export const AboutContainer = styled.div`
 .btn__wrapper {
@@ -64,13 +63,13 @@ margin-top: 30px;
     background-repeat: no-repeat;
     margin-top: 5rem;
     margin-bottom: 5rem;
-    height: 1450px;
+    height: 100%;
     background-size: cover;
     position: relative;
   }
   .book__wrapper {
     display: flex;
-    padding: 300px 247px 100px;
+    padding: 360px 247px 100px;
    
   }
   .icon__wrapper {
@@ -315,7 +314,6 @@ margin-top: 20px;
     }
     .arrow__left {
       margin-top: 70px !important;
-
       margin-left: 10px;
     }
     .team__member__img {
@@ -346,16 +344,82 @@ line-height: 30px;
       background-image: url(${rec});
     }
     .team__photo  {
-    width: 388px;
+    width: 100%;
     height:284px;
+    margin-bottom: 40px;
   }
   .book__wrapper {
     flex-direction: column-reverse;
    padding: 239px 40px 0 !important;
   }
   .about__us__book {
-    height: 2450px;
+    height: 100%;
   }
+  .blur__img,    .blur__play{
+    width: 264px !important;
+    height: 165px !important;
+  }
+  .blur__play img {
+    margin:  56px 105px !important;
+  }
+  .minutes {
+    left: 78% !important;
+    top: 78% !important;
+  }
+ .wrapper {
+  margin: 40px;
+ }
+ .clients__rate__title {
+font-size: 32px !important;
+line-height: 32px !important;
+width: 388px !important;
+margin: 0 40px !important;
+ }
+ .clients__rate__subtitle {
+font-size: 16px !important;
+line-height: 30px !important;
+width: 388px !important;
+margin: 0 40px !important;
+ }
+ .my__team__title {
+  font-size: 32px !important;
+ }
+ .my__team__subtitle {
+  font-size: 16px !important;
+
+ }
+ .my__team {
+  padding: 40px !important;
+ }
+ .team__member__img {
+  width: 268px !important;
+
+ }
+ .blur__bg {
+  width: 224px !important;
+ }
+ .btn__wrapper {
+  margin-left: 25%;
+ }
+ .cards__wrapper {
+  .card {
+    width: 264px !important;
+    height: 165px !important;
+  }
+ }
+ .arrow__left img,.arrow__rigth img {
+  padding: 12px !important;
+ }
+ .team__book {
+  gap: 15px;
+  padding-left: 20px !important;
+ }
+ .wrapper {
+  margin: 0;
+ }
+ .left__cheveron__cont img,.rigth__cheveron__cont img {
+  padding: 12px !important;
+ }
   }
  
 `;

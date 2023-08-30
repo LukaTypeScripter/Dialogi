@@ -1,13 +1,22 @@
-
-import styled from 'styled-components'
-import { cheveronLeftPurple, TestVIdeo, Play, cheveronRigthPurple, arrowRigthPurple, TeamMember1, TeamMember2, TeamMember3 } from '../../assets'
-import Button from '../Button/Button'
-
+import styled from "styled-components";
+import {
+  cheveronLeftPurple,
+  TestVIdeo,
+  Play,
+  cheveronRigthPurple,
+  arrowRigthPurple,
+  TeamMember1,
+  TeamMember2,
+  TeamMember3,
+} from "../../assets";
+import Button from "../Button/Button";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 
 export const Rates = () => {
+  const isAboveTabletScreens = useMediaQuery("(max-width:685px)");
   return (
     <>
-    <div className="clients__rate__container">
+      <div className="clients__rate__container">
         <h1 className="clients__rate__title">
           ნახეთ ჩვენი კლიენტების შეფასებები
         </h1>
@@ -24,32 +33,44 @@ export const Rates = () => {
           </div>
 
           <div className="cards__wrapper">
-            <div className="card">
-              <img src={TestVIdeo} alt="" className='blur__img'/>
-              <div className="blur__play">
-                <img src={Play} alt="" />
-                <div className="minutes">01:54</div>
-                <p className="video__name">ტესტ ვიდეო 1</p>
+            {isAboveTabletScreens ? (
+              <div className="card">
+                <img src={TestVIdeo} alt="" className="blur__img" />
+                <div className="blur__play">
+                  <img src={Play} alt="" />
+                  <div className="minutes">01:54</div>
+                  <p className="video__name">ტესტ ვიდეო 1</p>
+                </div>
               </div>
-            </div>
+            ) : (
+              <>
+                <div className="card">
+                  <img src={TestVIdeo} alt="" className="blur__img" />
+                  <div className="blur__play">
+                    <img src={Play} alt="" />
+                    <div className="minutes">01:54</div>
+                    <p className="video__name">ტესტ ვიდეო 1</p>
+                  </div>
+                </div>
+                <div className="card">
+                  <img src={TestVIdeo} alt="" className="blur__img" />
+                  <div className="blur__play">
+                    <img src={Play} alt="" />
+                    <div className="minutes">01:54</div>
+                    <p className="video__name">ტესტ ვიდეო 1</p>
+                  </div>
+                </div>
 
-            <div className="card">
-              <img src={TestVIdeo} alt="" className='blur__img'/>
-              <div className="blur__play">
-                <img src={Play} alt="" />
-                <div className="minutes">01:54</div>
-                <p className="video__name">ტესტ ვიდეო 1</p>
-              </div>
-            </div>
-
-            <div className="card">
-              <img src={TestVIdeo} alt="" className='blur__img'/>
-              <div className="blur__play">
-                <img src={Play} alt="" />
-                <div className="minutes">01:54</div>
-                <p className="video__name">ტესტ ვიდეო 1</p>
-              </div>
-            </div>
+                <div className="card">
+                  <img src={TestVIdeo} alt="" className="blur__img" />
+                  <div className="blur__play">
+                    <img src={Play} alt="" />
+                    <div className="minutes">01:54</div>
+                    <p className="video__name">ტესტ ვიდეო 1</p>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
 
           <div className="arrow__rigth">
@@ -60,85 +81,97 @@ export const Rates = () => {
 
       <div className="my__team">
         <h1 className="my__team__title">ჩვენი გუნდი</h1>
-        <p className="my__team__subtitle">ჩვენი გუნდი დაკომპლექტებულია უმაღლესი დონის პროფესიონალებით, რომლებსაც როგორც თეორიული ცოდნის, ისე პრაქტიკული მუშაობის მრავალწლიანი გამოცდილება აქვთ. მუშაობენ ევროპული სტანდარტებისა და ეთიკის კოდექსის სრული დაცვით.</p>
+        <p className="my__team__subtitle">
+          ჩვენი გუნდი დაკომპლექტებულია უმაღლესი დონის პროფესიონალებით, რომლებსაც
+          როგორც თეორიული ცოდნის, ისე პრაქტიკული მუშაობის მრავალწლიანი
+          გამოცდილება აქვთ. მუშაობენ ევროპული სტანდარტებისა და ეთიკის კოდექსის
+          სრული დაცვით.
+        </p>
         <div className="btn__wrapper">
-       
-        <Btns>
-          <p>ყველას ნახვა</p>
-          <img src={arrowRigthPurple} alt="" />
-        </Btns>
+          <Btns>
+            <p>ყველას ნახვა</p>
+            <img src={arrowRigthPurple} alt="" />
+          </Btns>
         </div>
-     
       </div>
 
       <div className="team__book">
-      <div className="arrow__left">
-            <img src={cheveronLeftPurple} alt="" />
+        <div className="arrow__left">
+          <img src={cheveronLeftPurple} alt="" />
+        </div>
+        {isAboveTabletScreens ? (
+          <div className="team__wrapper">
+            <img src={TeamMember1} alt="" className="team__member__img" />
+            <div className="blur__bg">
+              <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
+              <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
+              <div className="blur__btn_wrapper">
+                <BtnBook>დაჯავშნა</BtnBook>
+              </div>
+            </div>
           </div>
+        ) : (
+          <>
+            <div className="team__wrapper">
+              <img src={TeamMember1} alt="" className="team__member__img" />
+              <div className="blur__bg">
+                <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
+                <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
+                <div className="blur__btn_wrapper">
+                  <BtnBook>დაჯავშნა</BtnBook>
+                </div>
+              </div>
+            </div>
+            <div className="team__wrapper">
+              <img src={TeamMember2} alt="" className="team__member__img" />
+              <div className="blur__bg">
+                <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
+                <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
+                <div className="blur__btn_wrapper">
+                  <BtnBook>დაჯავშნა</BtnBook>
+                </div>
+              </div>
+            </div>
+            <div className="team__wrapper">
+              <img src={TeamMember3} alt="" className="team__member__img" />
+              <div className="blur__bg">
+                <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
+                <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
+                <div className="blur__btn_wrapper">
+                  <BtnBook>დაჯავშნა</BtnBook>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
 
-          <div className="team__wrapper">
-          <img src={TeamMember1} alt="" className='team__member__img'/>
-          <div className="blur__bg">
-          <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
-          <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
-          <div className="blur__btn_wrapper">
-          <BtnBook>დაჯავშნა</BtnBook>
-          </div>
-          </div>
-          
-          </div>
-          <div className="team__wrapper">
-          <img src={TeamMember2} alt="" className='team__member__img'/>
-          <div className="blur__bg">
-          <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
-          <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
-          <div className="blur__btn_wrapper">
-          <BtnBook>დაჯავშნა</BtnBook>
-          </div>
-          </div>
-          
-          </div>
-          <div className="team__wrapper">
-          <img src={TeamMember3} alt=""  className='team__member__img'/>
-          <div className="blur__bg">
-          <h1 className="blur__title">ქეთევან ირემაშვილი</h1>
-          <p className="blur__subtitle">ქოუჩი, პერსონალური ტრენერი</p>
-          <div className="blur__btn_wrapper">
-          <BtnBook>დაჯავშნა</BtnBook>
-          </div>
-          </div>
-          
-          </div>
-
-          <div className="arrow__rigth">
-            <img src={cheveronRigthPurple} alt="" />
-          </div>
+        <div className="arrow__rigth">
+          <img src={cheveronRigthPurple} alt="" />
+        </div>
       </div>
     </>
-  )
-}
-
+  );
+};
 
 export const Btns = styled(Button)`
   display: flex;
-  padding:17px 20px 18px;
-  border: 0.75px #911DC4 solid;
+  padding: 17px 20px 18px;
+  border: 0.75px #911dc4 solid;
   background-color: transparent;
   border-radius: 7px;
   gap: 10px;
-  p{
-    color: #911DC4;
-font-size: 16px;
-font-family: FiraGO;
-font-weight: 500;
-line-height: 21px;
-word-wrap: break-word
+  p {
+    color: #911dc4;
+    font-size: 16px;
+    font-family: FiraGO;
+    font-weight: 500;
+    line-height: 21px;
+    word-wrap: break-word;
   }
-
-`
+`;
 export const BtnBook = styled(Button)`
-width: 217px;
-height: 56px;
+  width: 217px;
+  height: 56px;
   color: white;
   background-color: #911dc4;
   font-size: 16px;
@@ -152,5 +185,11 @@ height: 56px;
   margin-left: 210px;
   @media only screen and (max-width: 90rem) {
     margin-left: 170px;
+  }
+  @media only screen and (max-width: 43.3rem) {
+    width: auto;
+    height: auto;
+
+    margin-left: 140px;
   }
 `;
