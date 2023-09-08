@@ -5,7 +5,7 @@ import connectDb from "./config/db.js";
 import userRoutes from './routes/userRoutes.js'
 import admin from './routes/adminRoutes.js'
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
-import multer from "multer";
+
 //setup
 const app = express();
 dotenv.config()
@@ -22,8 +22,7 @@ app.use("/api/users",userRoutes)
 app.use("/api/admin",admin)
 app.use(notFound)
 app.use(errorHandler)
-// Establish a separate connection for data insertion
-// Establish a separate connection for data insertion
+
 // const insertionConnection = mongoose.createConnection(process.env.MONGO_URI, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
