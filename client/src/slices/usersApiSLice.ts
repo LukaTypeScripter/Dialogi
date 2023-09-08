@@ -1,19 +1,20 @@
+import { Data, aboutUs } from './../dataTypes';
 import { apiSlice } from "./apiSlice";
 const USERS_URL = '/api/users';
-
+const ADMIN_URL = '/api/admin';
 export const usersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    fetchData: builder.mutation({
+    fetchData: builder.mutation<Data, void>({
       query: () => ({
         url: `${USERS_URL}/data`,
         method: "GET", // Assuming you're making a GET request for fetching data
       }),
     }),
-    register: builder.mutation({
+    aboutusimages: builder.mutation<aboutUs[], void>({
       query: (data) => ({
-        url: `${USERS_URL}`,
-        method: "POST",
-        body: data,
+        url: `/api/admin/aboutusimage`,
+        method: "GET",
+       
       }),
     }),
     logout: builder.mutation({
@@ -32,4 +33,4 @@ export const usersApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useFetchDataMutation, useLogoutMutation, useRegisterMutation, useUpdateUserMutation } = usersApiSlice;
+export const { useFetchDataMutation, useLogoutMutation, useAboutusimagesMutation, useUpdateUserMutation } = usersApiSlice;
