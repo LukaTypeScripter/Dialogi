@@ -4,7 +4,7 @@ import MainModel from '../../model/mainModels.js'
 //@desc    admin Route
 //route GET /api/admin/
 //@access PRIVATE
-const newAboutUsImageUpdate = asyncHandler(async (req, res) => {
+const newLastPostedUpdate = asyncHandler(async (req, res) => {
   const mainId = req.params.mainId;
   const sectionId = req.params.sectionId;
   const imageId = req.params.imageId;
@@ -19,7 +19,7 @@ const newAboutUsImageUpdate = asyncHandler(async (req, res) => {
     return res.status(404).json({ message: 'Section not found' });
   }
 
-  const content = section.aboutUsimgs.find(aboutUsimg => aboutUsimg._id.equals(imageId));
+  const content = section.lastPosted.find(aboutUsimg => aboutUsimg._id.equals(imageId));
   if (!content) {
     return res.status(404).json({ message: 'Content not found' });
   }
@@ -29,7 +29,8 @@ const newAboutUsImageUpdate = asyncHandler(async (req, res) => {
     content.img = req.file.buffer.toString('base64'); // Update image
   }
 
-  content.content = req.body.content; // Update content
+  content.title = req.body.title;
+  content.subtitle = req.body.subtitle; 
   await mainDocument.save();
 
   res.status(200).json(mainDocument);
@@ -94,6 +95,7 @@ const newAboutUsImageUpdate = asyncHandler(async (req, res) => {
     if (!section) {
       return res.status(404).json({ message: 'Section not found' });
     }
+  console.log(req.file);
     const newImage = {
       img: req.file.buffer.toString('base64'), // Save image as Base64 string
       content: req.body.content, // Update content
@@ -106,7 +108,7 @@ const newAboutUsImageUpdate = asyncHandler(async (req, res) => {
   });
   export {
     newAboutUsImageALL,
-    newAboutUsImageUpdate,
+    newLastPostedUpdate,
     newAboutUsImageDelate,
     newAboutUsImageAdd
-  }
+  } 
