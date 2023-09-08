@@ -26,6 +26,7 @@ router.get('/ourteam', getOurTeamMembers);
 // Add a new our team member
 router.put('/ourteam/:mainId/:sectionId',     upload.fields([
   { name: 'img', maxCount: 1 },
+  { name: 'teamMemberimg', maxCount: 1 },
   { name: 'bgimg', maxCount: 1 },
 ]), newOurTeamMember);
 
