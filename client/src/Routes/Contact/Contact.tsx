@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import Button from "../../components/Button/Button";
+import useMediaQuery from "../../Hooks/useMediaQuery";
 
 const Contact = () => {
+    const isAboveTabletScreens = useMediaQuery("(max-width:685px)");
   return (
     <ContactContainer>
       <h1 className="contact__title">კონტაქტი</h1>
@@ -216,7 +218,8 @@ const Contact = () => {
           <SubmitContactBtn>გაგზავნა</SubmitContactBtn>
         </div>
       </div>
-      {/* <iframe
+      {!isAboveTabletScreens && (
+          <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d743.8141768495844!2d44.780543078058535!3d41.77968097001369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40446d63e8ee6db7%3A0x64220acb806119c5!2sWEBAPP!5e0!3m2!1ska!2sge!4v1692883029136!5m2!1ska!2sge"
         width="600"
         height="450"
@@ -224,7 +227,9 @@ const Contact = () => {
     
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-      ></iframe> */}
+      ></iframe> 
+      )}
+     
     </ContactContainer>
   );
 };
@@ -321,6 +326,7 @@ const ContactContainer = styled.div`
       padding-bottom: 28px;
       padding-right: 280px;
       padding-left: 20px;
+      width: 100%;
     }
     input::placeholder,
     .title__textarea::placeholder {
@@ -360,14 +366,19 @@ const ContactContainer = styled.div`
     .contact__info {
       width: 355px;
     }
-   .title {
-    width: 864px !important;
-   }
+ 
   }
   @media only screen and (max-width: 43.3rem) {
     .name__surname__Wrapper,.contact__main {
       flex-direction: column;
      
+    }
+    .contact__inputs {
+      margin-left: 0;
+      margin-top: 71px;
+    }
+    .title {
+      width: 100% !important;
     }
    
   }

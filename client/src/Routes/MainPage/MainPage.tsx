@@ -22,35 +22,67 @@ import {
   videoPlay,
 } from "../../assets";
 import { Helmet } from "react-helmet-async";
-import {  useFetchDataMutation } from "../../slices/usersApiSLice";
+import {  useFetchDataMutation,useAboutusimagesMutation } from "../../slices/usersApiSLice";
 import { MainContainer, ContactBtn, ServicesBtn } from "./styles";
 import styled from "styled-components";
 import { headerCoolBlack } from "../../styled";
 import ServicesCard from "../../components/servicesCard/servicesCard";
 import DialogServices from "../../components/dialogServices/DialogServices";
 import useMediaQuery from "../../Hooks/useMediaQuery";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { AuthState } from "../../slices/authSlice";
+import Slider from 'react-slick';
 const MainPage = () => {
   const isAboveTabletScreens = useMediaQuery("(max-width:685px)");
   const [fetchData, { data, isLoading }] = useFetchDataMutation();
-
+  const [fetchImages, { data: aboutusData, isError, error }] = useAboutusimagesMutation();
 const { userInfo } = useSelector((state: { auth: AuthState }) => state.auth);
+
 useEffect(() => {
-  
+  fetchData()
+  fetchImages()
 },[userInfo])
 
 
 if (isLoading) {
   return <div>Loading...</div>;
 }
-
-
-if (data) {
-  console.log('Fetched data:', data);
-}
-
+const settingsSmallScreen = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  prevArrow: (
+    <div style={{width:'54px',height:'54px',}}>
+    <img src={cheveronLeftBlue} alt="" style={{padding:'12px',border:"1px #032D60 solid",borderRadius:'7px'}}/>
+  </div>
+  ),
+  nextArrow: (
+    <div style={{width:'54px',height:'54px',}}>
+          <img src={cheveronRigthBlue} style={{padding:'12px',border:"1px #032D60 solid",borderRadius:'7px'}} />
+        </div>
+  ),
+};
+const settingsBigScreen = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  prevArrow: (
+    <div style={{width:'54px',height:'54px',}}>
+    <img src={cheveronLeftBlue} alt="" style={{padding:'12px',border:"1px #032D60 solid",borderRadius:'7px'}}/>
+  </div>
+  ),
+  nextArrow: (
+    <div style={{width:'54px',height:'54px',}}>
+          <img src={cheveronRigthBlue} alt="" style={{padding:'12px',border:"1px #032D60 solid",borderRadius:'7px'}}/>
+        </div>
+  ),
+};
+console.log("about us datra " +aboutusData?.map((data) => {return data.content}));
   return (
     <MainContainer>
       <Helmet>
@@ -86,24 +118,26 @@ if (data) {
    <h1>ჩვენ შესახებ</h1>
           )}
       </div>
+     
         <div className="photo__slider">
+     
           <div className="instagram__cont">
             <img src={videoPlay} alt="" />
           </div>
-          <div className="left__cheveron__cont">
-            <img src={cheveronLeft} alt="" />
-          </div>
-
-          <img src={teamMember} alt="" className="team__member" />
-
-          <div className="rigth__cheveron__cont">
-            <img src={cheveronRigth} alt="" />
-          </div>
+               <div style={{width:'400px'}}>
+              <Slider {...settingsBigScreen}> 
+   {aboutusData?.map((data,index) => (
+    <img src={`data:image/png;base64,${data.img}`}  alt={`Image ${index + 1}`}
+    className="team__member"/>
+  ))} 
+     </Slider>
+              </div>
           <div className="gallery">
             <img src={galeryFavorite} alt="" />
           </div>
+          
         </div>
-
+   
         <div className="about__us__texts">
           {!isAboveTabletScreens && (
    <h1>ჩვენ შესახებ</h1>
@@ -243,6 +277,9 @@ if (data) {
           </div>
         </div>
       </RecentPosted>
+
+     
+     
     </MainContainer>
   );
 };

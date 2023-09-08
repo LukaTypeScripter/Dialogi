@@ -40,6 +40,7 @@ import TeamMember6 from './team-member6.png'
 import homepagesuccessnow from './homepage-success-now-lg-bg.png'
 import map from './map.png'
 import rec from './rec.png'
+import georgia from './georgia.png'
 export {
     headerLogo,
     rec,
@@ -82,5 +83,6 @@ export {
     TeamMember4,
     TeamMember5,
     TeamMember6,
-    homepagesuccessnow
+    homepagesuccessnow,
+    georgia
 }

@@ -2,52 +2,112 @@
 import useMediaQuery from '../../Hooks/useMediaQuery';
 import { cheveronLeftBlue, cheveronRigthBlue } from '../../assets'
 import Card from '../card/Card'
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import Slider from 'react-slick';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { AuthState } from '../../slices/authSlice';
+import { useFetchDataMutation } from '../../slices/usersApiSLice';
+import { Data } from '../../dataTypes';
 const DialogServices = () => {
   const isAboveTabletScreens = useMediaQuery("(max-width:685px)");
+  const [fetchData, { data, isLoading }] = useFetchDataMutation();
+
+  const { userInfo } = useSelector((state: { auth: AuthState }) => state.auth);
+  useEffect(() => {
+    fetchData()
+  },[userInfo])
+
+  const documents = data?.documents;
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+  
+  console.log(data);
+  
+  if (data) {
+    console.log('Fetched data:', data);
+  }
+  const settingsSmallScreen = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: (
+      <div style={{width:'54px',height:'54px',}}>
+      <img src={cheveronLeftBlue} alt="" style={{padding:'12px',border:"1px #032D60 solid",borderRadius:'7px'}}/>
+    </div>
+    ),
+    nextArrow: (
+      <div style={{width:'54px',height:'54px',}}>
+            <img src={cheveronRigthBlue} style={{padding:'12px',border:"1px #032D60 solid",borderRadius:'7px'}} />
+          </div>
+    ),
+  };
+  const settingsBigScreen = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: (
+      <div style={{width:'54px',height:'54px',}}>
+      <img src={cheveronLeftBlue} alt="" style={{padding:'12px',border:"1px #032D60 solid",borderRadius:'7px'}}/>
+    </div>
+    ),
+    nextArrow: (
+      <div style={{width:'54px',height:'54px',}}>
+            <img src={cheveronRigthBlue} alt="" style={{padding:'12px',border:"1px #032D60 solid",borderRadius:'7px'}}/>
+          </div>
+    ),
+  };
   return (
    <>
-   <div className="services__wrapper">
-          <div className="left__cheveron__services">
-            <img src={cheveronLeftBlue} alt="" />
-          </div>
+
+          
 
           {/**cards */}
-          <div className="card__wrapper">
-            {isAboveTabletScreens ? (
-               <Card
-               header="თეატრ თერაპია"
-               color="#EFECFF"
-               subtitle="მოირგე როლი, რომელიც შენთვის საინტერესოა, გაცვალე ემოციები ჯგუფის წევრებთან და გათავისუფლდი დაგროვილი, შეკავებული ენერგიისგან."
-             />
-            ) : (
-
-<>
-<Card
-               header="თეატრ თერაპია"
-               color="#EFECFF"
-               subtitle="მოირგე როლი, რომელიც შენთვის საინტერესოა, გაცვალე ემოციები ჯგუფის წევრებთან და გათავისუფლდი დაგროვილი, შეკავებული ენერგიისგან."
-             />
-<Card
-              header="სისტემური განლაგება "
-              subtitle="ერთ-ერთი ყველაზე მოთხოვნადი და საინტერეო ჯგუფური ტრენინგი, რომელიც საშუალებას გაძლევთ შორიდან დააკვირდეთ საკუთარ თავს,  როლს სხვა ადამიანი იკავებს."
-              color="#FFE6D4"
-            />
-            <Card
-              header="ქოუჩინგი"
-              subtitle="ქოუჩინგი დღევანდელ დღეს საკმაოდ პოპულარული და მოთხოვნადი პროდუქტია. თუმცა, ცოტამ თუ იცის სინამდვილეში მისი შინაარსის და დანიშნულების შესახებ. "
-              color="#E0ECFF"
-            />
-</>
-            )}
+          
+          {isAboveTabletScreens ? (
+            <Slider {...settingsSmallScreen}>
+              {documents?.map((document: Data) =>
+                document.sections.map((section, sectionIndex) =>
+                  section.contents.map((content, contentIndex) => (
+                    <>
+                    <Card
+                      key={contentIndex}
+                      header={content.title}
+                      color={content.color}
+                      subtitle={content.subtitle}
+                    />
+                    </>
+                  
+                  ))
+                )
+              )}
+            </Slider>
+          ) : (
+            <Slider {...settingsBigScreen}>
+              {documents?.map((document: Data) =>
+                document.sections.map((section, sectionIndex) =>
+                  section.contents.map((content, contentIndex) => (
+                    <Card
+                      key={contentIndex}
+                      header={content.title}
+                      color={content.color}
+                      subtitle={content.subtitle}
+                    />
+                  ))
+                )
+              )}
+            </Slider>
+          )}
            
-           
-          </div>
 
-          <div className="rigth__cheveron__services">
-            <img src={cheveronRigthBlue} alt="" />
-          </div>
-        </div>
+
+      
+      
    </>
   )
 }

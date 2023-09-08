@@ -12,7 +12,11 @@ const App = () => {
   return (
     <HelmetProvider>
     <Router>
+    <div style={{position:'relative'}}>
       <Navigation />
+ 
+
+    
     <Routes>
       <Route  path="/" element={<MainPage/>} />
       <Route  path="/about" element={<AboutUs/>} />
@@ -21,7 +25,9 @@ const App = () => {
       <Route  path="/team:id" element={<SpecificMember/>} />
       <Route  path="/contact" element={<Contact/>} />
     </Routes>
+
     <Footer/>
+    </div>
   </Router>
   </HelmetProvider>
   )

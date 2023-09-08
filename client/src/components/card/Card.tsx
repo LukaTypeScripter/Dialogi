@@ -7,6 +7,8 @@ interface Props {
     color:string
 }
 const Card = ({header,subtitle,color}:Props) => {
+    console.log(header,subtitle,color);
+    
   return (
     <CardContainer color={color}>
         <h1 >{header}</h1>

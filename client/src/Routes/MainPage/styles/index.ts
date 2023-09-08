@@ -202,7 +202,7 @@ export const MainContainer = styled.main`
       align-items:center;
       margin-top: 5rem;
     }
-    .left__cheveron__services {
+    .left__cheveron__services,.custom-arrow-left,.custom-arrow-rigth {
       border: 1px #032D60 solid;
       border-radius: 10px;
       margin-right: 53px;
@@ -211,6 +211,17 @@ export const MainContainer = styled.main`
       img {
         padding: 15px 14px 15px 16px;
       }
+    }
+    .slick-next {
+      right: 65px;
+    }
+    .slick-prev {
+      left: -105px;
+    }
+    .arrow__cont {
+      border: 1px #032D60 solid;
+      height: 54px;
+      width: 54px;
     }
     .rigth__cheveron__services {
       border: 1px #032D60 solid;
@@ -287,6 +298,12 @@ color: #BAB8C8;
   .slogan {
     padding: 129px 40px 80px 40px;
   }
+  .slick-next {
+      right: -25px !important;
+    }
+    .slick-prev {
+      left: -55px !important;
+    }
   .photo__slider {
     height: 490px !important;
   }
@@ -311,7 +328,7 @@ color: #BAB8C8;
   
 }
  .services {
-padding: 90px 40px 80px 40px !important;
+padding: 90px 60px 80px 60px !important;
 
 }
 .card__wrapper {
@@ -345,6 +362,12 @@ padding: 0;
     flex-direction: column;
     padding:20px 20px 40px;
   }
+  .slick-next {
+      right: -35px !important;
+    }
+    .slick-prev {
+      left: auto;
+    }
   .slogan__cont {
     margin-left: 0;
     h1 {
@@ -375,6 +398,7 @@ line-height: 32px !important;
   .team__member {
     width: 264px !important;
     height: 164px !important;
+
   }
   .photo__slider {
     width: 100% !important;
@@ -438,7 +462,7 @@ line-height: 32px !important;
     height: 42px !important;
   }
   .services {
-    padding: 40px 20px 53px !important;
+    padding: 40px 80px 53px !important;
   }
   .wrapper__team__members {
     display: flex;
