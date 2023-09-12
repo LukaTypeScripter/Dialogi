@@ -5,15 +5,16 @@ import connectDb from "./config/db.js";
 import userRoutes from './routes/userRoutes.js'
 import admin from './routes/adminRoutes.js'
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
-
+import fileUpload from 'express-fileupload';
 //setup
 const app = express();
+app.use(fileUpload());
 dotenv.config()
 const port = process.env.PORT || 5000;
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
-
+app.use('/uploads', express.static('backend/uploads'));
 connectDb()
 app.get('/', (req, res) => {
   res.send('Hello World!');
