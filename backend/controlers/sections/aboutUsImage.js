@@ -1,5 +1,6 @@
 import asyncHandler from 'express-async-handler'
-
+import path from 'path'
+import fs from 'fs/promises'
 import MainModel from '../../model/mainModels.js'
 //@desc    admin Route
 //route GET /api/admin/
@@ -14,19 +15,35 @@ const newAboutUsImageUpdate = asyncHandler(async (req, res) => {
     return res.status(404).json({ message: 'Main document not found' });
   }
 
-  const section = mainDocument.sections.find(section => section._id.equals(sectionId));
+  const section = mainDocument.sections.find((section) =>
+    section._id.equals(sectionId)
+  );
   if (!section) {
     return res.status(404).json({ message: 'Section not found' });
   }
 
-  const content = section.aboutUsimgs.find(aboutUsimg => aboutUsimg._id.equals(imageId));
+  const content = section.aboutUsimgs.find((aboutUsimg) =>
+    aboutUsimg._id.equals(imageId)
+  );
   if (!content) {
     return res.status(404).json({ message: 'Content not found' });
   }
 
-  // Check if an image was included in the request
-  if (req.file) {
-    content.img = req.file.buffer.toString('base64'); // Update image
+  if (req.files && req.files.img) {
+    const imgFile = req.files.img;
+    const uploadFolder = 'backend/uploads';
+
+    const imgFileName = `${Date.now()}_${imgFile.name}`;
+    const imgFilePath = path.join(uploadFolder, imgFileName);
+
+    try {
+      await imgFile.mv(imgFilePath); // Save the uploaded file to the server
+
+      content.img = path.relative('backend', imgFilePath); // Update the relative path
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Error saving the image' });
+    }
   }
 
   content.content = req.body.content; // Update content
@@ -34,7 +51,6 @@ const newAboutUsImageUpdate = asyncHandler(async (req, res) => {
 
   res.status(200).json(mainDocument);
 });
-
 
   const newAboutUsImageALL = asyncHandler(async (req, res) => {
     try {
@@ -82,27 +98,50 @@ const newAboutUsImageUpdate = asyncHandler(async (req, res) => {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
+
+
   const newAboutUsImageAdd = asyncHandler(async (req, res) => {
     const mainId = req.params.mainId;
     const sectionId = req.params.sectionId;
+  
     const mainDocument = await MainModel.findById(mainId);
     if (!mainDocument) {
       return res.status(404).json({ message: 'Main document not found' });
     }
   
-    const section = mainDocument.sections.find(section => section._id.equals(sectionId));
+    const section = mainDocument.sections.find((section) =>
+      section._id.equals(sectionId)
+    );
     if (!section) {
       return res.status(404).json({ message: 'Section not found' });
     }
-    const newImage = {
-      img: req.file.buffer.toString('base64'), // Save image as Base64 string
-      content: req.body.content, // Update content
-    };
   
-    section.aboutUsimgs.push(newImage);
-    await mainDocument.save();
+    if (req.files && req.files.img) {
+      const imgFile = req.files.img;
+      const uploadFolder = 'backend/uploads';
   
-    res.status(201).json(mainDocument);
+      const imgFileName = `${Date.now()}_${imgFile.name}`;
+      const imgFilePath = path.join(uploadFolder, imgFileName);
+  
+      try {
+        await imgFile.mv(imgFilePath); // Save the uploaded file to the server
+  
+        const newImage = {
+          img: path.relative('backend', imgFilePath), // Store the relative path
+          content: req.body.content, // Update content
+        };
+  
+        section.aboutUsimgs.push(newImage);
+        await mainDocument.save();
+  
+        res.status(201).json(mainDocument);
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Error saving the image' });
+      }
+    } else {
+      return res.status(400).json({ message: 'No file uploaded' });
+    }
   });
   export {
     newAboutUsImageALL,
