@@ -72,10 +72,10 @@ const newAboutUsImageUpdate = asyncHandler(async (req, res) => {
   });
 
   const newAboutUsImageDelate = asyncHandler(async (req, res) => {
-    const imageId = req.params._id; // Get the image ID from the URL parameters
+    const imageId = req.params._id;
     
     try {
-      // Find the document containing the specific image and delete it
+
       const mainDocument = await MainModel.findOne({ "sections.aboutUsimgs._id": imageId });
   
       if (!mainDocument) {
