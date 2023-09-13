@@ -6,6 +6,7 @@ import { isAdmin, protect } from '../middleware/authMiddleware.js';
 import { getOurTeamMembers,newOurTeamMember,updateOurTeamMember,deleteOurTeamMember } from '../controlers/sections/ourTeam.js';
 import { newLastPostedUpdate,newLastPostedAdd,newLastPostedALL,newLastPostedUDelate } from '../controlers/sections/lastPosted.js';
 import {addContent,contentsAll,updateContent} from '../controlers/sections/contents.js'
+import {newAboutUSALL,newAboutUSAdd,newAboutUSUDelate,newAboutUsUpdate} from '../controlers/sections/aboutus.js'
 //about-us section
 // router.post("/aboutusimage",newAboutUsImage)
 router.post('/admin',adminRoute)
@@ -35,5 +36,18 @@ router.get("/contents",contentsAll)
 router.put("/contents/:mainId/:sectionId/:contentId",updateContent)
 router.put("/contents/:mainId/:sectionId/",addContent)
 router.delete('/contents/:_id',newLastPostedUDelate)
+
+//TODO:test this routes
+//aboutus routes
+router.get("/aboutus",newAboutUSALL)
+router.put("/aboutus/:mainId/:sectionId/:contentId",newAboutUsUpdate)
+router.put("/aboutus/:mainId/:sectionId/",newAboutUSAdd)
+router.delete('/aboutus/:_id',newAboutUSUDelate)
+
+//rates routes
+router.get("/aboutus",newAboutUSALL)
+router.put("/aboutus/:mainId/:sectionId/:contentId",newAboutUsUpdate)
+router.put("/aboutus/:mainId/:sectionId/",newAboutUSAdd)
+router.delete('/aboutus/:_id',newAboutUSUDelate)
 
 export default router; 

@@ -21,28 +21,15 @@ const AboutUsImageSchema = new mongoose.Schema({
   });
 
   const AboutUsSectionSchema = new mongoose.Schema({
-    title: String,
-    subtitle: String,
-    mainImg: String,
-    sections: [
-      {
         id: String,
         img: String,
         title: String,
         subtitle: String,
-      },
-    ],
   });
   const creativeSchema = new mongoose.Schema({
-    title: String,
-    subtitle: String,
-    sections: [
-      {
         name: String,
         id: String,
         img: String
-      }
-    ]
   });
 
   const teamMemberSchema = new mongoose.Schema({
