@@ -7,6 +7,9 @@ import { getOurTeamMembers,newOurTeamMember,updateOurTeamMember,deleteOurTeamMem
 import { newLastPostedUpdate,newLastPostedAdd,newLastPostedALL,newLastPostedUDelate } from '../controlers/sections/lastPosted.js';
 import {addContent,contentsAll,updateContent} from '../controlers/sections/contents.js'
 import {newAboutUSALL,newAboutUSAdd,newAboutUSUDelate,newAboutUsUpdate} from '../controlers/sections/aboutus.js'
+import {newratesALL,newratesAdd,newratesUDelate,newratesUpdate} from '../controlers/sections/rates.js'
+import { newTeammembersALL,newTeammembersAdd,newTeammembersUDelate,newTeammembersUpdate } from '../controlers/sections/teammembers.js';
+import { newserviceALL,newserviceAdd,newserviceUDelate,newserviceUpdate } from '../controlers/sections/services.js';
 //about-us section
 // router.post("/aboutusimage",newAboutUsImage)
 router.post('/admin',adminRoute)
@@ -37,17 +40,29 @@ router.put("/contents/:mainId/:sectionId/:contentId",updateContent)
 router.put("/contents/:mainId/:sectionId/",addContent)
 router.delete('/contents/:_id',newLastPostedUDelate)
 
-//TODO:test this routes
 //aboutus routes
 router.get("/aboutus",newAboutUSALL)
-router.put("/aboutus/:mainId/:sectionId/:contentId",newAboutUsUpdate)
+router.put("/aboutus/:mainId/:sectionId/:imageId",newAboutUsUpdate)
 router.put("/aboutus/:mainId/:sectionId/",newAboutUSAdd)
 router.delete('/aboutus/:_id',newAboutUSUDelate)
 
 //rates routes
-router.get("/aboutus",newAboutUSALL)
-router.put("/aboutus/:mainId/:sectionId/:contentId",newAboutUsUpdate)
-router.put("/aboutus/:mainId/:sectionId/",newAboutUSAdd)
-router.delete('/aboutus/:_id',newAboutUSUDelate)
+router.get("/rates",newratesALL)
+router.put("/rates/:mainId/:sectionId/:imageId",newratesUpdate)
+router.put("/rates/:mainId/:sectionId/",newratesAdd)
+router.delete('/rates/:_id',newratesUDelate)
 
+//TODO: update seeder data to develop more easy !
+//teamembers routes
+router.get("/teamembers",newTeammembersALL)
+router.put("/teamembers/:mainId/:sectionId/:imageId",newTeammembersUpdate)
+router.put("/teamembers/:mainId/:sectionId/",newTeammembersAdd)
+router.delete('/teamembers/:_id',newTeammembersUDelate)
+
+
+//services routes
+router.get("/services",newserviceALL)
+router.put("/services/:mainId/:sectionId/:imageId",newserviceUpdate)
+router.put("/services/:mainId/:sectionId/",newserviceAdd)
+router.delete('/services/:_id',newserviceUDelate)
 export default router; 
