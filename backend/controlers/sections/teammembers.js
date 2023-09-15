@@ -143,10 +143,10 @@ const newTeammembersUpdate = asyncHandler(async (req, res) => {
             email: req.body.email,
             education: JSON.parse(req.body.education), 
             workExperience: JSON.parse(req.body.workExperience),
-            trening:JSON.parse(req.body.trening),
+            trening: JSON.parse(req.body.trening),
             learningCourse: JSON.parse(req.body.learningCourse)
         };
-  
+        console.log(education);
         section.teamMembers.push(newImage);
         await mainDocument.save();
   
