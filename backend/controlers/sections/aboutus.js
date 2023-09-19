@@ -4,6 +4,7 @@ import MainModel from '../../model/mainModels.js'
 //@desc    admin Route
 //route GET /api/admin/
 //@access PRIVATE
+//enam for status
 const newAboutUsUpdate = asyncHandler(async (req, res) => {
   const mainId = req.params.mainId;
   const sectionId = req.params.sectionId;

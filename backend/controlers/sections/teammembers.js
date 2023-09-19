@@ -123,7 +123,7 @@ const newTeammembersUpdate = asyncHandler(async (req, res) => {
     if (!section) {
       return res.status(404).json({ message: 'Section not found' });
     }
-   
+
     if (req.files && req.files.img) {
       const imgFile = req.files.img;
       const uploadFolder = 'backend/uploads';
